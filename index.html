@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Masa Sıfır – Onaylı sürdürülebilirlik vakaları ve çözüm pazarı</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4f6f9;--card:#fff;--ink:#0f1f3a;--mut:#5d6b82;--line:#e2e7ee;--acc:#0b3d91;--acct:#e8eefb;--ok:#0a7d5a;--okt:#e3f4ee;--wn:#9a5a06;--wnt:#fbeed5;--red:#d1344b;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#12141a;--card:#1b1e26;--ink:#eceef3;--mut:#9ba1ae;--line:#2e323d;--acc:#9bb0ff;--acct:#222b52;--ok:#6fcf9b;--okt:#17332a;--wn:#e7b25f;--wnt:#3a2d14;--red:#ff8a80;--on:#12141a;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#12141a;--card:#1b1e26;--ink:#eceef3;--mut:#9ba1ae;--line:#2e323d;--acc:#9bb0ff;--acct:#222b52;--ok:#6fcf9b;--okt:#17332a;--wn:#e7b25f;--wnt:#3a2d14;--red:#ff8a80;--on:#12141a;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,.num{font-weight:700;letter-spacing:-.02em}.demo{background:var(--wnt);color:var(--wn);text-align:center;font-size:13px;padding:6px 12px}.foot{max-width:1080px;margin:0 auto;padding:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--mut);font-size:13px;align-items:center}.hstat{display:flex;margin-top:26px;border-top:1px solid var(--line);padding-top:18px}.hstat div{padding-right:28px;margin-right:28px;border-right:1px solid var(--line)}.hstat div:last-child{border:0;margin:0;padding:0}.hstat b{display:block;font-size:30px;color:var(--ok);line-height:1.1}.hstat span{font-size:13px;color:var(--mut)}.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ok);margin-bottom:10px;font-weight:600}.hk{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}.hk .card{margin:0}.hk li{margin-bottom:8px}.hk ol,.hk ul{padding-left:20px;margin:0}.stars{color:#f5a623;font-size:14px}.disc{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-weight:700;font-size:12px;border-radius:6px;padding:2px 8px}.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(15,31,58,.05)}.hero.one{display:block}.hero h1{font-size:clamp(24px,3.2vw,34px);line-height:1.15;margin:0;text-wrap:balance;overflow-wrap:break-word}.hero p{color:var(--mut);max-width:50ch;margin:0;font-size:17px}.hart{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:76px;gap:10px}.hart .tile{border-radius:18px}.hart .tile svg{position:absolute;inset:0}@media(max-width:860px){.hero{grid-template-columns:1fr;padding:16px 20px}.hart{grid-template-rows:64px}}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 8px rgba(15,31,58,.06)}
+.bar{max-width:1080px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.brand{font:700 23px Inter,sans-serif;letter-spacing:-.03em;color:#0a3fc4;display:flex;align-items:center;gap:8px}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand{color:#6f93ff}}:root[data-theme="dark"] .brand{color:#6f93ff}.brand:before{content:"";width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--acc),var(--ok))}
+nav{display:flex;gap:20px;flex:1;flex-wrap:wrap}
+nav a{color:var(--mut);text-decoration:none;padding:10px 0;border-bottom:2px solid transparent;font-weight:500}
+nav a.on{color:var(--ink);border-color:var(--acc)}
+.role{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--card)}
+.role button{border:0;background:none;border-radius:99px;padding:10px 16px;min-height:40px;font-size:14px;cursor:pointer;color:var(--mut)}
+.role button.on{background:var(--ink);color:var(--paper)}
+main{max-width:1080px;margin:auto;padding:32px 20px 80px}
+h1{font-size:clamp(26px,4.5vw,38px);line-height:1.15;margin:0 0 10px}
+h2{font-size:21px;margin:0 0 12px}
+.lead{color:var(--mut);max-width:60ch;margin:0 0 26px;font-size:17px}
+.mut{color:var(--mut);font-size:14px}.small{font-size:13px}
+button,select,input,textarea{font:inherit;color:inherit}
+.btn{background:var(--ink);color:var(--paper);border:0;border-radius:10px;padding:10px 18px;min-height:44px;font-weight:500;cursor:pointer}
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--ink)}.btn.a{background:var(--acc);color:var(--on)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{padding:8px 14px;min-height:40px;font-size:14px}
+.lnk{background:none;border:0;color:var(--mut);cursor:pointer;padding:10px 12px;min-height:40px;border-radius:8px;font-size:14px}.lnk:hover,.lnk.on{color:var(--acc);background:var(--acct)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.tabs{display:flex;gap:22px;border-bottom:1px solid var(--line);margin-bottom:18px;overflow-x:auto}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:8px 0;color:var(--mut);cursor:pointer;white-space:nowrap;font-weight:500}
+.tabs button.on{color:var(--ink);border-color:var(--acc)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:10px 16px;min-height:40px;cursor:pointer;font-size:14px;white-space:nowrap}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:36px;align-items:start}
+@media(max-width:860px){.cols{grid-template-columns:1fr}.rail{order:-1}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(15,31,58,.05)}
+.head{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.mono{width:42px;height:42px;border-radius:10px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-weight:600;font-size:14px;flex:none}
+.mono.an{background:var(--line);color:var(--mut)}
+.tag{font-size:12px;border-radius:99px;padding:2px 10px;background:var(--acct);color:var(--acc);white-space:nowrap}
+.body{max-width:62ch}
+.mets{display:flex;flex-wrap:wrap;margin:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mets div{padding:12px 18px 12px 0;margin-right:18px;min-width:96px}.mets .num{font-size:24px;line-height:1.15;display:block;color:var(--ok)}
+.vf{background:var(--okt);color:var(--ok);border-radius:10px;padding:10px 14px;font-size:14px}.vf.w{background:var(--wnt);color:var(--wn)}.vf .mut{color:inherit;opacity:.85}
+.plink{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;padding:8px;margin-top:12px}
+.acts{display:flex;gap:2px;margin-top:12px}
+.cm{border-top:1px solid var(--line);padding:8px 0;font-size:14px}
+.tile{position:relative;overflow:hidden;border:1px solid var(--line);background:#eef2f8}.tile svg{width:100%;height:100%;display:block}
+.k-Enerji{--t:rgba(29,63,187,.14)}.k-Atık{--t:rgba(31,111,74,.16)}.k-Su{--t:rgba(15,143,156,.18)}.k-Karbon{--t:rgba(154,90,6,.18)}
+.sm-t{width:52px;height:52px;border-radius:10px;font-size:20px;flex:none}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.pc{cursor:pointer;display:flex;flex-direction:column;gap:6px}
+.pc .tile{height:170px;border-radius:14px;position:relative}
+.pc h3{font:600 15px/1.35 Inter,sans-serif;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}.pc .pr{margin-top:auto;padding-top:6px}.pr .old{display:block;margin:0;font-size:13px}.pr .old.n{text-decoration:none}.pbtn{width:100%;height:44px;border-radius:10px;font:600 14px Inter,sans-serif;cursor:pointer;border:1px solid var(--acc);margin-top:8px}.pbtn.f{background:var(--acc);color:var(--on)}.pbtn.l{background:transparent;color:var(--acc)}.pbtn:hover{filter:brightness(.93)}.disc.q{background:var(--acc)}.lb{padding:7px 4px 7px 0;color:var(--mut);font-size:14px;white-space:nowrap}#q,#so{height:44px}.pc{transition:box-shadow .15s,transform .15s}.pc:hover{box-shadow:0 8px 24px rgba(15,31,58,.12);transform:translateY(-2px)}.buy .pbtn{height:48px}.pc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 2px 12px rgba(15,31,58,.05)}
+.pc:hover h3{text-decoration:underline}
+.badge{position:absolute;top:10px;right:10px;font:600 12px Inter,sans-serif;background:var(--card);border-radius:99px;padding:2px 10px}
+.price{font-weight:600;font-size:18px}.old{text-decoration:line-through;color:var(--mut);font-size:14px;margin-right:6px;font-weight:400}
+.quote{color:var(--acc);font-weight:500;font-size:15px}
+.detail{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:40px;align-items:start}
+@media(max-width:860px){.detail{grid-template-columns:1fr}}
+.buy{position:sticky;top:80px}
+table{width:100%;border-collapse:collapse;font-size:15px}td{padding:10px 0;border-bottom:1px solid var(--line)}td:first-child{color:var(--mut);width:40%}
+label{display:block;font-size:13px;color:var(--mut);margin-bottom:4px}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}.form .w{grid-column:1/-1}
+.ci{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.qty{display:inline-flex;align-items:center;gap:10px}.qty button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--card);cursor:pointer}
+.empty{border:1px dashed var(--line);border-radius:14px;padding:32px;text-align:center;color:var(--mut)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.sp{flex:1}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:92vw;font-size:14px;z-index:9}
+#toast.show{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<div class="brand">Masa Sıfır</div>
+<nav id="nav"></nav>
+<div class="role" role="group" aria-label="Rol seçimi"><button data-role="sag">Çözüm sağlayıcı</button><button data-role="uz">Fabrika uzmanı</button></div>
+</div></header>
+<main id="app"></main><footer class="foot"><span>Masa Sıfır · Açık kaynak sürdürülebilirlik platformu</span><button class="lnk" id="rst">Sıfırla</button></footer>
+<div id="toast" role="status"></div>
+
+<script>
+var $=function(s){return document.querySelector(s)};
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var tl=function(n){return n.toLocaleString('tr-TR')+' ₺'};
+function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('show')},3200)}
+var ini=function(s){return s.replace(/[^A-Za-zÇĞİÖŞÜçğıöşü ]/g,'').split(' ').map(function(w){return w[0]}).join('').slice(0,2).toUpperCase()};
+
+var MYF='Örnek Seramik A.Ş.',SELF='AquaLoop',EXP={n:'Ayşe Kaya',r:'Sürdürülebilirlik Uzmanı'};
+var CUST=[MYF,'Örnek Cam A.Ş.','Örnek Porselen A.Ş.'];
+var P=[
+{id:1,s:'Telve Atölye',t:'Kahve posasından organik bardak (500 adet)',c:'Atık',p:['atık','karbon'],pr:4250,o:5100,r:4.7,n:132,ben:'Yemekhane telvesini çalışan bardağına dönüştürür.',sp:[['Malzeme','%30 kahve telvesi'],['Hacim','350 ml'],['Teslim','5 iş günü']]},
+{id:2,s:'EnerjiLab',t:'Ultrasonik hava kaçağı dedektörü',c:'Enerji',p:['enerji','maliyet'],pr:38900,o:44500,r:4.8,n:87,ben:'Basınçlı hava kaçaklarını sahada tespit eder.',sp:[['Menzil','30 m'],['Ekran','Isı haritalı'],['Garanti','2 yıl']]},
+{id:3,s:'Sürücü Teknik',t:'Değişken hız sürücüsü 22 kW',c:'Enerji',p:['enerji'],pr:27500,o:31000,r:4.6,n:214,ben:'Fan ve pompa motorlarında yüke göre hız ayarı yapar.',sp:[['Güç','22 kW / 400 V'],['Koruma','IP54'],['Garanti','3 yıl']]},
+{id:4,s:'ThermoRec',t:'Fırın baca gazı ısı geri kazanım eşanjörü (montaj dahil)',c:'Enerji',p:['enerji','karbon','maliyet'],rfq:1,ben:'Baca gazı ısısını ön ısıtmada kullanarak yakıt tüketimini azaltır.',sp:[['Kapasite','850 kW ısıl'],['Sıcaklık','Maks. 650 °C'],['Teslim','6 hafta']]},
+{id:5,s:'SolarOSB',t:'Çatı GES 100 kWp anahtar teslim',c:'Enerji',p:['enerji','karbon'],rfq:1,ben:'Çatı alanını elektrik üretimine çevirir, şebeke alımını azaltır.',sp:[['Güç','100 kWp'],['Panel','Tier-1 monokristal'],['Teslim','8–10 hafta']]},
+{id:6,s:'AquaLoop',t:'Proses suyu filtre ve geri kazanım ünitesi',c:'Su',p:['su','maliyet'],rfq:1,ben:'Sır ve çamur hattı proses suyunu arıtıp yeniden kullanıma verir.',sp:[['Debi','5 m³/saat'],['Filtre','Çok kademeli'],['Teslim','4 hafta']]},
+{id:11,s:'Siemens',b:1,t:'SINAMICS frekans konvertörleri (pompa, fan, kompresör)',c:'Enerji',p:['enerji','maliyet'],rfq:1,ben:'Motor hızını yüke göre ayarlayarak değişken yüklü uygulamalarda enerji tüketimini azaltır.',sp:[['Ürün ailesi','SINAMICS V20, G120'],['Uygulama','Pompa, fan, kompresör, konveyör'],['Teklif','Keşif ve ürün seçimi sonrası']]},
+{id:12,s:'Siemens',b:1,t:'SENTRON enerji ölçümü ve izleme çözümü',c:'Enerji',p:['enerji','maliyet','karbon'],rfq:1,ben:'Hat ve makine bazında tüketimi ölçer; ISO 50001 için veri altyapısı sağlar.',sp:[['Ürün ailesi','SENTRON ölçüm cihazları'],['Ölçüm','Güç, enerji, güç kalitesi'],['Teklif','Ölçüm noktası sayısına göre']]},
+{id:13,s:'Siemens',b:1,t:'Insights Hub (endüstriyel IoT ve enerji analitiği)',c:'Enerji',p:['enerji','karbon','maliyet'],rfq:1,ben:'Makine ve enerji verisini tek platformda toplar, tüketim sapmalarını görünür kılar.',sp:[['Tür','Bulut tabanlı IoT platformu'],['Veri kaynakları','PLC, sayaç, sensör'],['Teklif','Kapsama göre']]},
+{id:14,s:'Siemens',b:1,t:'SIMOTICS yüksek verimli motorlar (IE3 / IE4)',c:'Enerji',p:['enerji'],rfq:1,ben:'Sürekli çalışan hatlarda eski motorların yüksek verimli sınıflarla değişimi.',sp:[['Ürün ailesi','SIMOTICS motorlar'],['Verimlilik','IE3, IE4 seçenekleri'],['Teklif','Güç ve adede göre']]},
+{id:15,s:'Siemens',b:1,t:'SiGREEN ürün karbon ayak izi veri çözümü',c:'Karbon',p:['karbon'],rfq:1,ben:'Ürün bazlı karbon ayak izi verisini tedarik zinciri boyunca hesaplama ve paylaşmaya yönelik.',sp:[['Odak','Ürün bazlı karbon ayak izi'],['Kullanım','Tedarikçi–müşteri veri paylaşımı'],['Teklif','Kapsama göre']]},
+{id:7,s:'Parla Aydınlatma',t:'Endüstriyel LED aydınlatma (50 armatür)',c:'Enerji',p:['enerji','maliyet'],pr:31750,o:38000,r:4.6,n:301,ben:'Yüksek tavanlı hatlarda aydınlatma enerjisini azaltır.',sp:[['Güç','150 W / armatür'],['Ömür','50.000 saat'],['Garanti','5 yıl']]},
+{id:8,s:'SayaçNet',t:'Enerji izleme IoT sensör seti (12 kanal)',c:'Enerji',p:['enerji','maliyet','karbon'],pr:14900,o:17900,r:4.4,n:178,ben:'Hat bazında anlık tüketimi gösterir, boşta çalışan ekipmanı görünür kılar.',sp:[['Kanal','12 sensör'],['Bağlantı','Wi-Fi / LoRa'],['Teslim','3 iş günü']]},
+{id:9,s:'IsıKoruma',t:'Vana ve flanş ısı yalıtım ceket seti',c:'Enerji',p:['enerji','karbon'],pr:8900,o:10500,r:4.5,n:96,ben:'Buhar ve sıcak yağ hatlarında ısı kaybını azaltır.',sp:[['Adet','24 parça'],['Sıcaklık','Maks. 400 °C'],['Teslim','1 hafta']]},
+{id:10,s:'KarbonKit',t:'Karbon ayak izi ve CBAM raporlama yazılımı (yıllık)',c:'Karbon',p:['karbon'],pr:24000,o:30000,r:4.7,n:56,ben:'Ürün bazında emisyonu hesaplar, ihracat müşterisi için rapor üretir.',sp:[['Kullanıcı','5 kişi'],['Rapor','CBAM, ISO 14064 uyumlu'],['Kurulum','Anında']]},
+{id:16,s:'ÇamurTek',t:'Seramik çamuru geri kazanım hattı',c:'Atık',p:['atık','maliyet'],rfq:1,ben:'Pres atığı ve çamuru hazırlama hattına geri besler, bertaraf ve hammadde maliyetini düşürür.',sp:[['Kapasite','Hatta göre projelendirilir'],['Kapsam','Hazırlama, karıştırma, besleme'],['Teslim','10–12 hafta']]},
+{id:17,s:'Filtre Sistemleri',t:'Atıksu çamuru filtre pres susuzlaştırma ünitesi',c:'Su',p:['su','atık','maliyet'],rfq:1,ben:'Çamur nemini düşürerek nakliye hacmini ve bertaraf maliyetini azaltır.',sp:[['Plaka','Seçilebilir ebat ve adet'],['Otomasyon','PLC kontrollü'],['Teslim','8 hafta']]},
+{id:18,s:'ThermoRec',t:'Kompresör atık ısı geri kazanım ünitesi',c:'Enerji',p:['enerji','karbon','maliyet'],rfq:1,ben:'Kompresör ısısını proses sıcak suyuna aktararak kazan yakıtını azaltır.',sp:[['Uygunluk','Yağlı vidalı kompresörler'],['Çıkış','Proses sıcak suyu'],['Teslim','5 hafta']]},
+{id:19,s:'Siemens',b:1,t:'SIMATIC Energy Manager (enerji yönetim yazılımı)',c:'Enerji',p:['enerji','maliyet','karbon'],rfq:1,ben:'Enerji verisini toplayıp raporlayarak enerji yönetim sistemi çalışmalarını destekler.',sp:[['Tür','Enerji yönetim yazılımı'],['Kullanım','Ölçüm, raporlama, hedef takibi'],['Teklif','Kapsama göre']]},
+{id:20,s:'Siemens',b:1,t:'Desigo bina otomasyonu (HVAC enerji optimizasyonu)',c:'Enerji',p:['enerji','maliyet'],rfq:1,ben:'İdari bina ve üretim alanlarında ısıtma, soğutma ve havalandırmayı ihtiyaca göre yönetir.',sp:[['Ürün ailesi','Desigo'],['Uygulama','HVAC ve bina yönetimi'],['Teklif','Keşif sonrası']]},
+{id:21,s:'KompostTek',t:'Yemekhane organik atık kompost ünitesi',c:'Atık',p:['atık','karbon'],pr:86500,o:99000,r:4.3,n:38,ben:'Yemekhane ve üretim organik atığını yerinde kompostlar, çöp nakliyesini azaltır.',sp:[['Kapasite','Günlük 100 kg'],['Çıktı','Toprak düzenleyici kompost'],['Teslim','3 hafta']]}];
+var byId=function(i){return P.filter(function(p){return p.id==i})[0]};
+
+var F=[
+{id:1,type:'cozum',by:'ThermoRec',cust:'Örnek Cam A.Ş.',st:'ok',scope:'osb',ap:'Elif Demir, Sürdürülebilirlik Uzmanı · Örnek Cam',ago:'2 sa',text:'Cam eritme fırını baca gazından ısı geri kazanımı projesi devreye alındı. Geri kazanılan ısı hammadde ön ısıtmasında kullanılıyor. Sonuçlar 6 aylık sayaç verisinin proje öncesi aynı dönemle kıyaslanması ve üretime göre normalize edilmesiyle hesaplandı.',m:[['Özgül doğalgaz','−%14'],['Yıllık tasarruf','312.000 ₺'],['Yatırım','480.000 ₺'],['Geri ödeme','18 ay'],['CO₂','−180 t/yıl']],ver:'Ölçüm: 6 ay, alt sayaç, üretime göre normalize',prod:4,likes:48,cm:[['Örnek Seramik A.Ş.','Kurutucu hattında benzer bir uygulamayı değerlendiriyoruz. Baca gazı sıcaklığı ve eşanjör tipi nedir?']]},
+{id:2,type:'cozum',by:'EnerjiLab',cust:'Örnek Porselen A.Ş.',st:'ok',scope:'osb',ap:'Murat Aksoy, Enerji ve Sürdürülebilirlik Müdürü · Örnek Porselen',ago:'5 sa',text:'Basınçlı hava sistemi verimlilik çalışması tamamlandı. Periyodik ultrasonik kaçak taraması ve onarım programı uygulandı. Kompresör odası sayaç ve debi ölçümleri üretim hacmine göre normalize edildi.',m:[['Kaçak oranı','%28 → %9'],['Özgül enerji','−%16'],['Proje maliyeti','62.000 ₺'],['Geri ödeme','4 ay']],ver:'Ölçüm: 3 ay, kompresör odası sayacı, debi ölçümü',prod:2,likes:73,cm:[]},
+{id:3,type:'atik',by:'Mermer işleme tesisi',st:'ok',scope:'osb',ago:'1 g',text:'Atık ilanı: mermer kesme ve işleme atığı, atık kodu 01 04 13. Kuru toz, %96 CaCO₃, ince öğütülmüş. Düzenli çıkış, aylık yaklaşık 300 ton. Analiz raporu mevcut. Kütahya OSB ve çevresinde alıcı aranıyor.',m:[],likes:19,cm:[['Plastik üretim tesisi','Beyazlık (L*) ve nem değeri nedir? Dolgu hattımız için uygun olabilir.']]},
+{id:4,type:'girdi',by:'Plastik üretim tesisi',st:'ok',scope:'ulusal',ago:'1 g',text:'Girdi talebi: kalsit / mermer tozu, aylık 500 ton. Beyazlık 90 üzeri, nem %1 altı, tane boyutu 5–20 µm. Düzenli tedarik için sözleşme yapılabilir. Kütahya bölgesi tercih edilir.',m:[],likes:12,cm:[]},
+{id:5,type:'cozum',by:'Sürücü Teknik',cust:'Örnek Tekstil A.Ş.',st:'ok',scope:'ulusal',ap:'Selin Yıldız, Sürdürülebilirlik Uzmanı · Örnek Tekstil',ago:'2 g',text:'Boyahane proses pompalarındaki 6 motora değişken hız sürücüsü uygulandı. Debi proses talebine göre ayarlanıyor. Önce/sonra kıyası 4 aylık sayaç verisiyle yapıldı.',m:[['Motor enerjisi','−%31'],['Yıllık tasarruf','186.000 ₺'],['Yatırım','165.000 ₺'],['Geri ödeme','11 ay']],ver:'Ölçüm: 4 ay, motor kontrol panosu sayaçları',prod:3,likes:95,cm:[]},
+{id:6,type:'cozum',by:'SolarOSB',cust:'Örnek Keramik GmbH',st:'ok',scope:'global',ap:'Jana Weber, Nachhaltigkeitsmanagerin · Örnek Keramik (otomatik çeviri)',ago:'4 g',text:'Fabrika çatısına 100 kWp güneş enerjisi santrali kuruldu. İlk işletme yılında şebekeden alınan elektrik maliyeti proje öncesine göre düştü; öz tüketim oranı yüksek tutuldu.',m:[['Şebeke maliyeti','−%27'],['CO₂','−40 t/yıl']],ver:'Ölçüm: ilk yıl, çift yönlü sayaç',prod:5,likes:130,cm:[]},
+{id:8,type:'cozum',by:'Parla Aydınlatma',cust:'Örnek Fayans A.Ş.',st:'ok',scope:'osb',ap:'Hakan Çelik, Çevre ve Sürdürülebilirlik Uzmanı · Örnek Fayans',ago:'5 g',text:'Üretim ve depo alanlarındaki 220 metal halide armatür LED’e dönüştürüldü. Aydınlatma panosu sayaçları dönüşüm öncesi ve sonrası aynı vardiya düzeniyle karşılaştırıldı.',m:[['Aydınlatma enerjisi','−%58'],['Yıllık tasarruf','94.000 ₺'],['Yatırım','140.000 ₺'],['Geri ödeme','18 ay']],ver:'Ölçüm: 4 ay, aydınlatma panosu sayacı',prod:7,likes:41,cm:[]},
+{id:9,type:'cozum',by:'SayaçNet',cust:'Örnek Porselen A.Ş.',st:'ok',scope:'osb',ap:'Murat Aksoy, Enerji ve Sürdürülebilirlik Müdürü · Örnek Porselen',ago:'6 g',text:'Hat bazlı alt sayaçlar ve izleme panosu kuruldu. Vardiya sonrası boşta çalışan ekipman görünür hale geldi ve kapatma prosedürü uygulandı.',m:[['Boşta tüketim','−%22'],['Toplam elektrik','−%6'],['Yatırım','58.000 ₺'],['Geri ödeme','7 ay']],ver:'Ölçüm: 5 ay, 12 alt sayaç, üretime göre normalize',prod:8,likes:57,cm:[['Örnek Cam','Alt sayaçları hangi noktalara yerleştirdiniz?']]},
+{id:10,type:'cozum',by:'IsıKoruma',cust:'Örnek Cam A.Ş.',st:'ok',scope:'osb',ap:'Elif Demir, Sürdürülebilirlik Uzmanı · Örnek Cam',ago:'1 hf',text:'Buhar ve sıcak yağ hatlarındaki 140 vana ve flanşa yalıtım ceketi uygulandı. Yüzey sıcaklığı termal kamerayla önce ve sonra ölçüldü.',m:[['Yüzey sıcaklığı','118 → 41 °C'],['Yıllık tasarruf','48.000 ₺'],['Yatırım','36.000 ₺'],['Geri ödeme','9 ay']],ver:'Ölçüm: termal kamera, 2 ölçüm turu',prod:9,likes:34,cm:[]},
+{id:11,type:'cozum',by:'KarbonKit',cust:'Örnek Karo A.Ş.',st:'ok',scope:'ulusal',ap:'Burcu Tan, Sürdürülebilirlik Müdürü · Örnek Karo',ago:'1 hf',text:'Ürün bazlı emisyon hesabı kuruldu. AB’ye ihracatta müşterilerden gelen karbon verisi taleplerini karşılamak için hazırlık süresi kısaldı.',m:[['Hazırlık süresi','−%50'],['Kapsanan ürün','42 SKU'],['Yıllık lisans','24.000 ₺']],ver:'Doğrulama: ISO 14064 uyumlu hesap, iç denetim',prod:10,likes:66,cm:[]},
+{id:12,type:'cozum',by:'ÇamurTek',cust:'Örnek Fayans A.Ş.',st:'ok',scope:'osb',ap:'Hakan Çelik, Çevre ve Sürdürülebilirlik Uzmanı · Örnek Fayans',ago:'2 hf',text:'Pres atığı ve çamur hazırlama hattına geri beslendi. Bertaraf edilen miktar ve satın alınan hammadde azaldı.',m:[['Bertaraf edilen çamur','−%78'],['Yıllık tasarruf','420.000 ₺'],['Yatırım','590.000 ₺'],['Geri ödeme','17 ay']],ver:'Ölçüm: 6 ay, kantar kayıtları, hammadde tüketimi',prod:16,likes:88,cm:[]},
+{id:13,type:'cozum',by:'Filtre Sistemleri',cust:'Örnek Çini A.Ş.',st:'ok',scope:'ulusal',ap:'Zeynep Arslan, Çevre Mühendisi · Örnek Çini',ago:'2 hf',text:'Atıksu arıtma çamuru filtre pres ile susuzlaştırıldı. Çamur nemi düştü, nakliye sefer sayısı azaldı.',m:[['Çamur nemi','%78 → %38'],['Nakliye seferi','−%45']],ver:'Ölçüm: 4 ay, kantar ve laboratuvar analizi',prod:17,likes:29,cm:[]},
+{id:14,type:'cozum',by:'ThermoRec',cust:'Örnek Karo A.Ş.',st:'ok',scope:'ulusal',ap:'Burcu Tan, Sürdürülebilirlik Müdürü · Örnek Karo',ago:'3 hf',text:'Kompresör ısısı proses sıcak suyuna aktarıldı. Sıcak su kazanının yakıt tüketimi düştü.',m:[['Kazan gazı','−%22'],['Yıllık tasarruf','134.000 ₺'],['Yatırım','175.000 ₺'],['Geri ödeme','16 ay']],ver:'Ölçüm: 5 ay, gaz sayacı, sıcak su debimetresi',prod:18,likes:52,cm:[]},
+{id:15,type:'cozum',by:'KompostTek',cust:'Örnek Gıda A.Ş.',st:'ok',scope:'ulusal',ap:'Deniz Koç, Sürdürülebilirlik Uzmanı · Örnek Gıda',ago:'1 ay',text:'Yemekhane ve üretim organik atıkları yerinde kompostlandı. Çıkan kompost tesis peyzajında kullanılıyor.',m:[['Organik atık bertarafı','−%90'],['Çöp nakliyesi','−%35'],['Yatırım','86.500 ₺']],ver:'Ölçüm: 5 ay, kantar kayıtları',prod:21,likes:38,cm:[]},
+{id:16,type:'atik',by:'Cam üretim tesisi',st:'ok',scope:'osb',ago:'3 g',text:'Atık ilanı: renkli cam kırığı (kullet), atık kodu 10 11 12. Aylık yaklaşık 80 ton, metal ve seramik içermez, renk ayrımı yapılmıştır. Kütahya OSB içinde alıcı aranıyor.',m:[],likes:14,cm:[]},
+{id:17,type:'girdi',by:'Refrakter üretim tesisi',st:'ok',scope:'osb',ago:'4 g',text:'Girdi talebi: pişmiş fayans ve seramik kırığı (şamot hammaddesi), atık kodu 10 12 08. Aylık 150 ton, boyut 0–10 mm, organik kirlilik içermemeli.',m:[],likes:17,cm:[]},
+{id:18,type:'atik',by:'Enerji üretim tesisi',st:'ok',scope:'ulusal',ago:'1 hf',text:'Atık ilanı: uçucu kül, atık kodu 10 01 02. Aylık yaklaşık 1.200 ton, kuru ve elenmiş. Çimento ve dolgu uygulamaları için uygun, analiz raporu mevcut.',m:[],likes:21,cm:[]},
+{id:7,type:'cozum',by:SELF,cust:MYF,st:'bekliyor',scope:'osb',ago:'bugün',text:'Seramik sır ve çamur hattı proses suyu için kapalı devre geri kazanım ünitesi devreye alındı. Çekilen temiz su miktarı üç aylık sayaç verisiyle izlendi.',m:[['Temiz su çekişi','−%64'],['Geri ödeme','22 ay']],ver:'Ölçüm: 3 ay, giriş suyu sayacı',prod:6,likes:0,cm:[]}];
+
+var st={role:'uz',scope:'tumu',type:'tumu',cat:'Hepsi',sort:'uygun',q:'',pr:['enerji','atık'],liked:{},open:{},cart:{},form:0};
+var TY={cozum:'Onaylı vaka',atik:'Atık ilanı',girdi:'Girdi talebi'},SC={osb:'Kütahya OSB',ulusal:'Ulusal',global:'Global'};
+var fit=function(p){var m=p.p.filter(function(x){return st.pr.indexOf(x)>-1}).length;return st.pr.length?Math.round(m/st.pr.length*100):0};
+var cartN=function(){return Object.keys(st.cart).reduce(function(s,k){return s+st.cart[k]},0)};
+var pend=function(){return F.filter(function(f){return f.st==='bekliyor'&&f.cust===MYF})};
+var BG={Enerji:['#dbe7ff','#b3cdff'],Atık:['#dff3e6','#b9e3cb'],Su:['#d8f0f6','#aee0ee'],Karbon:['#fbeccd','#f3d195']};
+var IC={
+1:'<path d="M70 50h60l-6 55a8 8 0 0 1-8 7H84a8 8 0 0 1-8-7z" fill="#6b4a2f"/><rect x="66" y="42" width="68" height="10" rx="4" fill="#3d2a1a"/><path d="M134 60h12a10 10 0 0 1 0 22h-14" fill="none" stroke="#6b4a2f" stroke-width="6"/><circle cx="100" cy="82" r="10" fill="#9fd8b0"/>',
+2:'<rect x="62" y="40" width="34" height="62" rx="8" fill="#243b6b"/><rect x="68" y="48" width="22" height="26" rx="3" fill="#8fd3ff"/><path d="M96 52l30-16v50l-30-14z" fill="#3d5fa8"/><path d="M134 52a22 22 0 0 1 0 30M144 44a34 34 0 0 1 0 46" fill="none" stroke="#243b6b" stroke-width="4" stroke-linecap="round"/>',
+3:'<rect x="56" y="48" width="64" height="48" rx="8" fill="#243b6b"/><circle cx="88" cy="72" r="14" fill="#8fd3ff"/><path d="M88 72l8-9" stroke="#243b6b" stroke-width="4"/><rect x="120" y="60" width="26" height="24" rx="4" fill="#3d5fa8"/><rect x="62" y="96" width="52" height="8" rx="3" fill="#3d5fa8"/>',
+4:'<rect x="50" y="46" width="80" height="58" rx="6" fill="#c0392b"/><path d="M62 66h56M62 80h56M62 94h56" stroke="#f6b3a6" stroke-width="5"/><rect x="130" y="58" width="20" height="34" rx="4" fill="#243b6b"/><path d="M70 40c4-10 10-10 8-20M96 40c4-10 10-10 8-20" stroke="#e67e22" stroke-width="5" fill="none" stroke-linecap="round"/>',
+5:'<path d="M52 98l16-52h80l-16 52z" fill="#243b6b"/><path d="M62 82h82M70 64h82M84 46l-10 52M104 46l-8 52M124 46l-6 52" stroke="#8fd3ff" stroke-width="2.5" fill="none"/><circle cx="160" cy="34" r="14" fill="#f5b50a"/>',
+6:'<path d="M100 30c20 26 32 40 32 58a32 32 0 0 1-64 0c0-18 12-32 32-58z" fill="#2aa6c8"/><path d="M84 94a16 16 0 0 0 16 16" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>',
+11:'<circle cx="100" cy="72" r="26" fill="#009999"/><circle cx="100" cy="72" r="10" fill="#fff"/><path d="M100 36v10M100 98v10M64 72h10M126 72h10M74 46l7 7M119 91l7 7M126 46l-7 7M81 91l-7 7" stroke="#009999" stroke-width="7" stroke-linecap="round"/>',
+12:'<rect x="56" y="40" width="88" height="64" rx="8" fill="#243b6b"/><path d="M66 90l18-20 14 12 20-26 16 14" stroke="#7ee2c8" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+13:'<path d="M70 98a22 22 0 0 1 2-44 30 30 0 0 1 58 8 18 18 0 0 1-2 36z" fill="#009999"/><path d="M84 80h32M100 66v28" stroke="#fff" stroke-width="5" stroke-linecap="round"/>',
+14:'<rect x="56" y="52" width="68" height="44" rx="10" fill="#009999"/><path d="M66 52v44M76 52v44M86 52v44M96 52v44M106 52v44" stroke="#007a7a" stroke-width="3"/><rect x="124" y="68" width="26" height="12" rx="3" fill="#243b6b"/><rect x="50" y="96" width="80" height="8" rx="3" fill="#243b6b"/>',
+15:'<path d="M60 96c0-40 30-60 82-60 0 48-28 70-70 70" fill="#0a7d5a"/><path d="M66 100c20-24 40-38 64-48" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>',
+w:'<path d="M50 104l24-34 18 20 24-40 34 54z" fill="#6f7f8f"/><path d="M92 90l24-40 34 54H92z" fill="#8c9bab"/>',
+g:'<rect x="64" y="56" width="72" height="48" rx="6" fill="#3d5fa8"/><path d="M40 80h40m0 0l-12-12m12 12l-12 12" stroke="#0a7d5a" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+7:'<path d="M70 40h60l14 28H56z" fill="#f5b50a"/><rect x="92" y="68" width="16" height="10" fill="#243b6b"/><path d="M82 84l-12 22M100 84v26M118 84l12 22" stroke="#f5b50a" stroke-width="4" stroke-linecap="round" opacity=".7"/>',
+8:'<rect x="62" y="48" width="76" height="52" rx="8" fill="#243b6b"/><circle cx="82" cy="74" r="8" fill="#7ee2c8"/><rect x="98" y="62" width="30" height="6" rx="3" fill="#8fd3ff"/><rect x="98" y="76" width="22" height="6" rx="3" fill="#8fd3ff"/><path d="M100 48V36a8 8 0 0 1 16 0" stroke="#243b6b" stroke-width="4" fill="none"/>',
+9:'<rect x="56" y="58" width="88" height="40" rx="12" fill="#7b8794"/><path d="M72 58v40M88 58v40M104 58v40M120 58v40" stroke="#5a6572" stroke-width="3"/><rect x="48" y="70" width="12" height="16" rx="3" fill="#243b6b"/><rect x="140" y="70" width="12" height="16" rx="3" fill="#243b6b"/>',
+10:'<circle cx="100" cy="68" r="32" fill="#0a7d5a"/><path d="M84 70l12 12 22-26" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="100" y="122" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" font-weight="700" fill="#07563e">CO₂</text>',
+16:'<path d="M50 100q10-40 30-40t20 40z" fill="#b08968"/><path d="M104 100q10-30 26-30t20 30z" fill="#8c6a4a"/><path d="M60 40h70m0 0l-10-9m10 9l-10 9" stroke="#0a7d5a" stroke-width="5" fill="none" stroke-linecap="round"/>',
+17:'<rect x="44" y="56" width="112" height="40" rx="6" fill="#3d5fa8"/><path d="M64 56v40M84 56v40M104 56v40M124 56v40M144 56v40" stroke="#243b6b" stroke-width="4"/><path d="M80 104v14M100 104v14M120 104v14" stroke="#2aa6c8" stroke-width="6" stroke-linecap="round"/>',
+18:'<rect x="56" y="54" width="60" height="46" rx="8" fill="#243b6b"/><circle cx="86" cy="77" r="12" fill="#8fd3ff"/><path d="M122 70h26m0 0l-8-8m8 8l-8 8" stroke="#e67e22" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+19:'<rect x="50" y="44" width="100" height="64" rx="8" fill="#009999"/><rect x="62" y="82" width="12" height="16" fill="#fff"/><rect x="82" y="70" width="12" height="28" fill="#fff"/><rect x="102" y="58" width="12" height="40" fill="#fff"/><rect x="122" y="76" width="12" height="22" fill="#fff"/>',
+20:'<rect x="62" y="36" width="76" height="70" rx="4" fill="#009999"/><path d="M74 50h12v12H74zM94 50h12v12H94zM114 50h12v12h-12zM74 72h12v12H74zM94 72h12v12H94zM114 72h12v12h-12z" fill="#fff"/><rect x="92" y="92" width="16" height="14" fill="#007a7a"/>',
+21:'<path d="M58 62h84l-10 44H68z" fill="#6b4a2f"/><rect x="52" y="54" width="96" height="10" rx="4" fill="#3d2a1a"/><path d="M100 50c-4-14 4-22 18-24-1 14-6 22-18 24z" fill="#4caf7d"/>'};
+function art(p){var b=BG[p.c];return '<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+esc(p.t)+'"><defs><linearGradient id="g'+p.id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+b[0]+'"/><stop offset="1" stop-color="'+b[1]+'"/></linearGradient></defs><rect width="200" height="140" fill="url(#g'+p.id+')"/>'+(IC[p.id]||'')+'</svg>'}
+var tile=function(p,c){return '<div class="tile '+(c||'')+'">'+art(p)+'</div>'};
+var fById=function(i){return F.filter(function(f){return f.id==i})[0]};
+
+function post(f,q){
+ var pr=f.prod?byId(f.prod):0,an=f.type!=='cozum';
+ var h='<article class="card"><div class="head">'+(an?'<div class="mono an">?</div><div class="sp"><b>'+esc(f.by)+'</b><div class="mut">Kimlik eşleşme sonrası açılır · '+f.ago+'</div></div>':'<div class="mono">'+ini(f.by)+'</div><div class="sp"><b>'+esc(f.by)+'</b> <span class="mut">çözüm sağlayıcı</span><div class="mut">Müşteri: '+esc(f.cust)+' · '+f.ago+'</div></div>')+'<span class="tag">'+TY[f.type]+'</span><span class="tag">'+SC[f.scope]+'</span></div><div class="body">'+esc(f.text)+'</div>'+((pr||an)?'<div class="tile" style="height:190px;border-radius:12px;margin-top:14px">'+art(pr||{id:f.type==='atik'?'w':'g',c:'Atık',t:TY[f.type]})+'</div>':'');
+ if(f.m.length)h+='<div class="mets">'+f.m.map(function(x){return '<div><span class="num">'+esc(x[1])+'</span><span class="mut small">'+esc(x[0])+'</span></div>'}).join('')+'</div>';
+ if(f.type==='cozum'){h+=f.st==='ok'?'<div class="vf"><b>✓ Fabrika uzmanı onayladı</b><br>'+esc(f.ap)+'<div class="mut small">'+esc(f.ver)+'</div></div>':'<div class="vf w"><b>Onay bekliyor</b> · '+esc(f.cust)+' sürdürülebilirlik uzmanı<div class="mut small">'+esc(f.ver)+'</div></div>'}
+ if(pr)h+='<a class="plink" href="#urun-'+pr.id+'">'+tile(pr,'sm-t')+'<div class="sp"><div style="font-weight:500">'+esc(pr.t)+'</div><div class="mut">'+esc(pr.s)+'</div></div><span class="quote">'+(pr.rfq?'Teklif iste':tl(pr.pr))+' →</span></a>';
+ if(q){h+='<div style="margin-top:14px;border-top:1px solid var(--line);padding-top:14px"><label style="display:flex;gap:8px;align-items:flex-start;color:var(--ink);font-size:14px"><input type="checkbox" id="chk'+f.id+'" style="width:auto;margin-top:3px"> Paylaşımdaki verilerin fabrikamızın kayıtlarıyla uyuştuğunu onaylıyorum.</label><div class="row" style="margin-top:12px"><button class="btn" data-ok="'+f.id+'">Onayla ve yayınla</button><button class="btn o" data-no="'+f.id+'">Reddet</button></div></div>'}
+ else if(f.st==='ok'){var lk=st.liked[f.id];h+='<div class="acts"><button class="lnk'+(lk?' on':'')+'" data-like="'+f.id+'">Beğen · '+(f.likes+(lk?1:0))+'</button><button class="lnk" data-cm="'+f.id+'">Yorum · '+f.cm.length+'</button>'+(an?'<button class="lnk" data-ask="1">İletişim iste</button>':'')+'</div>'
+  +(st.open[f.id]?f.cm.map(function(c){return '<div class="cm"><b>'+esc(c[0])+'</b> '+esc(c[1])+'</div>'}).join('')+'<div class="row" style="margin-top:8px"><input id="ci'+f.id+'" style="flex:1;width:auto" placeholder="Yorum yazın"><button class="btn sm" data-send="'+f.id+'">Gönder</button></div>':'')}
+ return h+'</article>'}
+
+function form(){
+ if(!st.form)return '';
+ if(st.role==='sag')return '<div class="card"><h2>Vaka paylaş</h2><p class="mut">Paylaşımınız, müşteri fabrikanın sürdürülebilirlik uzmanı onaylayınca yayınlanır.</p><div class="form"><div><label for="fc">Müşteri fabrika</label><select id="fc">'+CUST.map(function(c){return '<option>'+esc(c)+'</option>'}).join('')+'</select></div><div><label for="fp">İlgili ürün</label><select id="fp"><option value="">Seçilmedi</option>'+P.filter(function(p){return p.s===SELF}).map(function(p){return '<option value="'+p.id+'">'+esc(p.t)+'</option>'}).join('')+'</select></div><div class="w"><label for="ft">Ne uygulandı, sonuç nasıl ölçüldü?</label><textarea id="ft" rows="3"></textarea></div><div><label for="fl1">Sonuç 1 (ad)</label><input id="fl1" placeholder="Özgül enerji"></div><div><label for="fv1">Değer</label><input id="fv1" placeholder="−%12"></div><div><label for="fl2">Sonuç 2 (ad)</label><input id="fl2" placeholder="Geri ödeme"></div><div><label for="fv2">Değer</label><input id="fv2" placeholder="14 ay"></div><div class="w"><label for="fm">Ölçüm yöntemi ve süresi</label><input id="fm" placeholder="3 ay, alt sayaç, üretime göre normalize"></div></div><div class="row" style="margin-top:16px"><button class="btn" id="subm">Onaya gönder</button><button class="btn o" data-form="0">Vazgeç</button></div></div>';
+ return '<div class="card"><h2>İlan ver</h2><p class="mut">İlanınızda şirket adınız görünmez; iki taraf kabul edince açılır.</p><div class="form"><div><label for="fk">Tür</label><select id="fk"><option value="atik">Atığım var</option><option value="girdi">Girdi arıyorum</option></select></div><div><label for="fs">Kapsam</label><select id="fs"><option value="osb">Kütahya OSB</option><option value="ulusal">Ulusal</option><option value="global">Global</option></select></div><div class="w"><label for="fx">Malzeme, atık kodu, miktar, nem ve bileşim</label><textarea id="fx" rows="3"></textarea></div></div><div class="row" style="margin-top:16px"><button class="btn" id="subl">Yayınla</button><button class="btn o" data-form="0">Vazgeç</button></div></div>'}
+
+function viewAkis(){
+ var l=F.filter(function(f){return f.st==='ok'&&(st.scope==='tumu'||f.scope===st.scope)&&(st.type==='tumu'||f.type===st.type)&&(!st.fsq||(f.text+f.by+(f.cust||'')).toLowerCase().indexOf(st.fsq.toLowerCase())>-1)});
+ var mine=F.filter(function(f){return f.by===SELF});
+ var h='<div class="hero"><div><h1>Açık kaynak sürdürülebilirlik ağı</h1></div><div class="hart">'+tile(byId(4))+tile(byId(5))+tile(byId(6))+'</div></div><div class="cols"><div>';
+ h+='<div class="row" style="margin-bottom:18px">'+(st.role==='sag'?'<button class="btn" data-form="1">Vaka paylaş</button>':'<button class="btn" data-form="1">İlan ver</button>')+'<input id="fq" value="'+esc(st.fsq||'')+'" placeholder="Vaka, fabrika veya çözüm ara" style="flex:1;min-width:200px;width:auto;height:44px"></div>'+form();
+ h+='<div class="tabs">'+[['tumu','Tümü'],['osb','Kütahya OSB'],['ulusal','Ulusal'],['global','Global']].map(function(x){return '<button class="'+(st.scope===x[0]?'on':'')+'" data-scope="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
+ h+='<div class="chips" style="margin-bottom:18px">'+[['tumu','Hepsi'],['cozum','Vakalar'],['atik','Atık ilanları'],['girdi','Girdi talepleri']].map(function(x){return '<button class="chip'+(st.type===x[0]?' on':'')+'" data-type="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
+ h+=l.map(function(f){return post(f)}).join('')+(l.length?'':'<div class="empty">Bu filtrede henüz paylaşım yok.</div>');
+ h+='</div><aside class="rail">';
+ if(st.role==='sag'){}
+ else{h+='<div class="card"><b>Onay bekleyenler</b><p class="mut">'+(pend().length?pend().length+' paylaşım sizin onayınızı bekliyor.':'Bekleyen paylaşım yok.')+'</p><a class="btn sm" href="#onay" style="text-decoration:none;display:inline-block">Onay sayfasına git</a></div>'}
+ h+='<div class="card"><b>Nasıl çalışır?</b><ol class="mut" style="padding-left:18px;margin:8px 0 0"><li>Çözüm sağlayıcı vaka hazırlar.</li><li>Müşteri fabrikanın uzmanı verileri doğrular.</li><li>Onaylanan vaka herkese açılır.</li></ol></div></aside></div>';
+ return h}
+
+function viewOnay(){
+ if(st.role!=='uz')return '<h1>Onay sayfası</h1><div class="empty">Bu sayfa fabrika sürdürülebilirlik uzmanlarına açıktır. Üstten “Fabrika uzmanı” rolüne geçin.</div>';
+ var l=pend();return '<h1>Onay bekleyenler</h1><p class="lead">'+esc(EXP.n)+' · '+EXP.r+' · '+MYF+'. Adınıza yapılan paylaşımlar siz onaylamadan yayınlanmaz.</p><div style="max-width:720px">'+l.map(function(f){return post(f,1)}).join('')+(l.length?'':'<div class="empty">Onay bekleyen paylaşım yok.</div>')+'</div>'}
+
+function viewPazar(){
+ var l=P.filter(function(p){return (st.cat==='Hepsi'||p.c===st.cat)&&(!st.q||(p.t+p.s).toLowerCase().indexOf(st.q.toLowerCase())>-1)});
+ l.sort(function(a,b){return st.sort==='uygun'?fit(b)-fit(a):st.sort==='artan'?(a.rfq?1e12:a.pr)-(b.rfq?1e12:b.pr):(b.rfq?-1:b.pr)-(a.rfq?-1:a.pr)});
+ var h='<h1>Çözüm pazarı</h1><p class="lead">Enerji, atık, su ve karbon çözümlerini satın alın ya da teklif isteyin. Sıralama fabrikanızın önceliklerine göre yapılır.</p>';
+ h+='<div class="row" style="margin-bottom:14px"><input id="q" value="'+esc(st.q)+'" placeholder="Ürün veya satıcı ara" style="flex:1;min-width:200px;width:auto"><select id="so" style="width:auto"><option value="uygun">Önceliklerime uygun</option><option value="artan">Fiyat: artan</option><option value="azalan">Fiyat: azalan</option></select></div>';
+ h+='<div class="chips" style="margin-bottom:10px"><span class="lb">Kategori</span>'+['Hepsi','Enerji','Atık','Su','Karbon'].map(function(c){return '<button class="chip'+(st.cat===c?' on':'')+'" data-cat="'+c+'">'+c+'</button>'}).join('')+'</div>';
+ h+='<div class="chips" style="margin-bottom:26px"><span class="lb">Önceliklerim</span>'+['enerji','atık','su','karbon','maliyet'].map(function(p){return '<button class="chip'+(st.pr.indexOf(p)>-1?' on':'')+'" data-pr="'+p+'">'+p+'</button>'}).join('')+'</div><div class="pgrid">';
+ h+=l.map(function(p){var f=fit(p);return '<article class="pc" data-go="'+p.id+'"><div class="tile">'+art(p)+(p.rfq?'<span class="disc q">Teklifle</span>':'<span class="disc">%'+Math.round((1-p.pr/p.o)*100)+'</span>')+(f>=50?'<span class="badge" style="color:var(--ok)">%'+f+' uygun</span>':'')+'</div><div class="mut small">'+esc(p.s)+'</div><h3>'+esc(p.t)+'</h3>'+(p.r?'<div class="stars">'+'★'.repeat(Math.round(p.r))+'☆'.repeat(5-Math.round(p.r))+' <span class="mut small">('+p.n+')</span></div>':'<div class="mut small">Üretici çözümü</div>')+'<div class="pr">'+(p.rfq?'<div class="old n">Özel fiyatlandırma</div><div class="price">Teklif alın</div>':'<div class="old">'+tl(p.o)+'</div><div class="price">'+tl(p.pr)+' <span class="mut small" style="font-weight:400">+ KDV</span></div>')+'</div>'+'<button class="pbtn '+(p.rfq?'l':'f')+'" data-sat="'+SL.indexOf(p.s)+'">'+(p.rfq?'Teklif iste':'Satıcı sayfasına git')+'</button></article>'}).join('')+'</div>'+(l.length?'':'<div class="empty">Sonuç yok.</div>');
+ return h}
+
+function viewUrun(id){var p=byId(id);if(!p)return '<div class="empty">Ürün bulunamadı.</div>';
+ var rel=F.filter(function(f){return f.prod===p.id&&f.st==='ok'});
+ return '<p class="mut"><a href="#pazar" style="color:var(--acc)">Çözüm pazarı</a> / '+p.c+'</p><div class="detail"><div>'+'<div class="tile" style="height:380px;border-radius:16px">'+art(p)+'</div>'+'<h2 style="margin-top:28px">Teknik özellikler</h2><table>'+p.sp.map(function(s){return '<tr><td>'+esc(s[0])+'</td><td>'+esc(s[1])+'</td></tr>'}).join('')+'</table>'+(p.b?'<p class="mut"></p>':'')
+ +(rel.length?'<h2 style="margin-top:32px">Bu çözümü kullanan fabrikalar</h2>'+rel.map(function(f){return post(f)}).join(''):'')+'</div><aside class="card buy"><div class="mut">'+esc(p.s)+'</div><h1 style="font-size:24px;margin:6px 0 12px">'+esc(p.t)+'</h1>'
+ +(p.r?'<div class="mut">'+'★'.repeat(Math.round(p.r))+' '+p.r+' · '+p.n+' değerlendirme</div>':'')
+ +(p.rfq?'<div class="price" style="font-size:22px;margin:14px 0">Fiyat için teklif alın</div>':'<div style="margin:14px 0"><span class="old">'+tl(p.o)+'</span><span class="price" style="font-size:28px">'+tl(p.pr)+'</span> <span class="mut">+ KDV</span></div>')
+ +'<div class="vf" style="margin-bottom:16px">'+esc(p.ben)+'</div>'
+ +'<button class="pbtn f" data-sat="'+SL.indexOf(p.s)+'">'+(p.rfq?'Teklif iste':'Satıcı sayfasına git')+'</button>'+'</aside></div>'}
+
+var Q=[
+{id:1,fab:'Örnek Cam A.Ş.',who:'Ahmet Kaya · Satın Alma Müdürü',prod:6,msg:'Sır hattı için 5 m³/saat kapasiteli ünite için teklif ve keşif randevusu rica ediyoruz.',det:[['Kapasite','5 m³/saat'],['Lokasyon','Kütahya OSB'],['Hedef kurulum','Q1']],ago:'2 sa',st:'yeni'},
+{id:2,fab:'Örnek Porselen A.Ş.',who:'Selin Aydın · Çevre Mühendisi',prod:6,msg:'Proses suyunun büyük kısmını geri kazanmak istiyoruz. Mevcut arıtma çıkışına bağlanabilir mi?',det:[['Kapasite','8 m³/saat'],['Lokasyon','Kütahya OSB'],['Hedef kurulum','Q2']],ago:'dün',st:'yeni'},
+{id:3,fab:'Örnek Fayans A.Ş.',who:'Hakan Çelik · Çevre ve Sürdürülebilirlik Uzmanı',prod:6,msg:'Kurulum süresi ve garanti koşullarını öğrenmek istiyoruz.',det:[['Kapasite','5 m³/saat'],['Lokasyon','Kütahya OSB'],['Hedef kurulum','Q1']],ago:'3 g',st:'gonderildi',tut:'96.000 ₺ + KDV',sure:'4 hafta'},
+{id:4,fab:'Örnek Çini A.Ş.',who:'Zeynep Arslan · Çevre Mühendisi',prod:6,msg:'Hat sonu atık su analizi için keşif yapılabilir mi?',det:[['Kapasite','3 m³/saat'],['Lokasyon','Bilecik'],['Hedef kurulum','Q3']],ago:'4 g',st:'yeni'}];
+var PR={slogan:'Endüstriyel proses suyu geri kazanımı',hak:'Seramik, cam ve porselen tesisleri için proses suyu arıtma ve geri kazanım sistemleri tasarlar, kurar ve devreye alır.',bil:[['Merkez','Eskişehir'],['Kuruluş','2016'],['Ekip','24 kişi'],['Hizmet bölgesi','Türkiye geneli'],['Odak sektörler','Seramik, cam, porselen']],sert:['ISO 9001','ISO 14001'],ilet:[['E-posta','info@aqualoop.example'],['Telefon','+90 000 000 00 00']]};
+function profBody(own){
+ var l=P.filter(function(p){return p.s===SELF}),vk=F.filter(function(f){return f.by===SELF&&f.type==='cozum'}),e=own&&st.pe;
+ var tb=function(a){return '<table>'+a.map(function(r){return '<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td></tr>'}).join('')+'</table>'};
+ var h='<div class="card"><div class="head" style="align-items:flex-start"><div class="mono" style="width:64px;height:64px;font-size:20px;border-radius:14px">'+ini(SELF)+'</div><div class="sp"><h1 style="font-size:28px;margin:0">'+esc(SELF)+'</h1>'+(e?'<input id="pe1" value="'+esc(PR.slogan)+'" style="margin-top:6px">':'<div class="mut" style="font-size:16px">'+esc(PR.slogan)+'</div>')+'<div class="row" style="margin-top:10px">'+PR.sert.map(function(s){return '<span class="tag" style="background:var(--okt);color:var(--ok)">'+esc(s)+'</span>'}).join('')+'</div></div>'+(own?(e?'<button class="btn" id="psv">Kaydet</button>':'<button class="btn o" data-pe="1">Profili düzenle</button>'):'')+'</div></div>';
+ h+='<div class="cols"><div><div class="card"><h2>Hakkımızda</h2>'+(e?'<textarea id="pe2" rows="4">'+esc(PR.hak)+'</textarea>':'<div class="body">'+esc(PR.hak)+'</div>')+'</div><h2>Çözümlerimiz</h2><div class="pgrid" style="margin-bottom:28px">'+l.map(function(p){return '<article class="pc" data-go="'+p.id+'"><div class="tile">'+art(p)+'</div><h3>'+esc(p.t)+'</h3></article>'}).join('')+'</div><h2>Vakalar</h2>'+(vk.length?vk.map(function(f){return post(f)}).join(''):'<div class="empty">Henüz vaka yok.</div>')+'</div><aside class="rail"><div class="card"><b>Firma bilgileri</b>'+tb(PR.bil)+'</div><div class="card"><b>İletişim</b>'+tb(PR.ilet)+'</div></aside></div>';
+ return h}
+function viewProfil(){return profBody(true)}
+var newQ=function(){return Q.filter(function(q){return q.st==='yeni'}).length};
+function viewTeklifler(){
+ var c=function(s){return Q.filter(function(q){return q.st===s}).length};
+ var TG={yeni:['Yeni',''],gonderildi:['Teklif gönderildi','background:var(--okt);color:var(--ok)'],red:['Uygun değil','background:var(--wnt);color:var(--wn)']};
+ var h='<h1>Gelen teklifler</h1><div class="mets" style="margin-bottom:24px"><div><span class="num">'+c('yeni')+'</span><span class="mut small">yeni talep</span></div><div><span class="num">'+c('gonderildi')+'</span><span class="mut small">teklif gönderildi</span></div><div><span class="num">'+Q.length+'</span><span class="mut small">toplam talep</span></div></div><div style="max-width:760px">';
+ h+=Q.map(function(q){var p=byId(q.prod),t=TG[q.st],o=st.qopen&&st.qopen[q.id];
+  return '<article class="card"><div class="head"><div class="mono">'+ini(q.fab)+'</div><div class="sp"><b>'+esc(q.fab)+'</b><div class="mut">'+esc(q.who)+' · '+q.ago+'</div></div><span class="tag" style="'+t[1]+'">'+t[0]+'</span></div>'
+  +'<a class="plink" href="#urun-'+p.id+'">'+tile(p,'sm-t')+'<div class="sp"><div style="font-weight:500">'+esc(p.t)+'</div><div class="mut">'+esc(p.s)+'</div></div></a>'
+  +'<div class="body" style="margin-top:12px">'+esc(q.msg)+'</div>'
+  +'<div class="mets">'+q.det.map(function(d){return '<div><span style="font-weight:600;display:block">'+esc(d[1])+'</span><span class="mut small">'+esc(d[0])+'</span></div>'}).join('')+'</div>'
+  +(q.st==='gonderildi'?'<div class="vf"><b>✓ Teklif gönderildi</b> · '+esc(q.tut)+' · Teslim: '+esc(q.sure)+'</div>'
+  :q.st==='yeni'?(o?'<div class="form"><div><label for="qa'+q.id+'">Teklif tutarı (KDV hariç)</label><input id="qa'+q.id+'" placeholder="96.000 ₺"></div><div><label for="qb'+q.id+'">Teslim süresi</label><input id="qb'+q.id+'" placeholder="4 hafta"></div><div class="w"><label for="qc'+q.id+'">Not</label><textarea id="qc'+q.id+'" rows="2"></textarea></div></div><div class="row" style="margin-top:14px"><button class="btn" data-qsend="'+q.id+'">Teklifi gönder</button><button class="btn o" data-qopen="'+q.id+'">Vazgeç</button></div>'
+  :'<div class="row"><button class="btn" data-qopen="'+q.id+'">Teklif hazırla</button><button class="btn o" data-qno="'+q.id+'">Uygun değil</button></div>'):'')+'</article>'}).join('');
+ return h+'</div>'}
+var SL=[];P.forEach(function(p){if(SL.indexOf(p.s)<0)SL.push(p.s)});
+function viewSatici(i){var n=SL[i];if(!n)return '<div class="empty">Satıcı bulunamadı.</div>';if(n===SELF)return '<p class="mut"><a href="#pazar" style="color:var(--acc)">Çözüm pazarı</a> / '+esc(n)+'</p>'+profBody(false)+'<div class="card" style="margin-top:24px"><h2>Teklif veya sipariş talebi</h2><div class="form"><div><label for="rn">Firma / ad</label><input id="rn"></div><div><label for="re">E-posta</label><input id="re" type="email"></div><div class="w"><label for="rm">Talebiniz</label><textarea id="rm" rows="3"></textarea></div></div><div class="row" style="margin-top:16px"><button class="pbtn f" id="req" style="width:auto;padding:0 24px;margin:0">Talebi gönder</button></div></div>';
+ var l=P.filter(function(p){return p.s===n});
+ return '<p class="mut"><a href="#pazar" style="color:var(--acc)">Çözüm pazarı</a> / '+esc(n)+'</p><div class="card"><div class="head"><div class="mono">'+ini(n)+'</div><div class="sp"><h1 style="font-size:26px;margin:0">'+esc(n)+'</h1><div class="mut">Çözüm sağlayıcı</div></div></div><div class="form"><div><label for="rn">Firma / ad</label><input id="rn"></div><div><label for="re">E-posta</label><input id="re" type="email"></div><div class="w"><label for="rm">Sipariş veya teklif talebiniz</label><textarea id="rm" rows="3"></textarea></div></div><div class="row" style="margin-top:16px"><button class="pbtn f" id="req" style="width:auto;padding:0 24px;margin:0">Talebi gönder</button></div></div><h2>Çözümleri</h2><div class="pgrid">'+l.map(function(p){return '<article class="pc" data-go="'+p.id+'"><div class="tile">'+art(p)+'</div><h3>'+esc(p.t)+'</h3></article>'}).join('')+'</div>'}
+var BUT=[['100000','100.000 ₺ altı'],['500000','100.000 – 500.000 ₺'],['1500000','500.000 – 1.500.000 ₺'],['99999999','1.500.000 ₺ üstü']];
+st.ad={prob:'',sek:'Seramik',but:'500000',loading:0,res:null};
+function vakaOf(p){return F.filter(function(f){return f.prod===p.id&&f.st==='ok'&&f.type==='cozum'})[0]}
+function yatirim(v){if(!v)return 0;var m=v.m.filter(function(x){return /yatırım|proje maliyeti/i.test(x[0])})[0];return m?parseInt(m[1].split('.').join(''),10)||0:0}
+function uyum(p,b){if(!p.rfq)return{k:p.pr<=b?'uygun':'asiyor',t:'Fiyat: '+tl(p.pr)+' + KDV'};var v=vakaOf(p),y=yatirim(v);if(y)return{k:y<=b?'belirsiz':'asiyor',t:'Referans yatırım: '+tl(y)+' ('+v.cust+' vakası)'};return{k:'belirsiz',t:'Fiyat teklifle belirlenir'}}
+var KW={enerji:['enerji','elektrik','gaz','fırın','kompresör','hava','aydınlat','motor','ısı','sıcak','buhar','tüketim','fatura'],'atık':['atık','çamur','bertaraf','çöp','organik','telve','kırık'],su:['su ','suyu','arıtma','atıksu','filtre'],karbon:['karbon','cbam','emisyon','ihracat','co2','ayak izi'],maliyet:['maliyet','bütçe','pahalı','tasarruf']};
+function yerel(a){var t=(a.prob+' ').toLocaleLowerCase('tr'),bt=+a.but,hit=[];for(var k in KW){if(KW[k].some(function(w){return t.indexOf(w)>-1}))hit.push(k)}
+ var s=P.map(function(p){var n=p.p.filter(function(x){return hit.indexOf(x)>-1}).length,u=uyum(p,bt);return {p:p,sc:n*2+(u.k==='uygun'?1:u.k==='asiyor'?-2:0)+(vakaOf(p)?0.5:0)}}).filter(function(x){return x.sc>0}).sort(function(x,y){return y.sc-x.sc}).slice(0,3);
+ return {ozet:'Sorununuzla ilişkili çözümler bütçenize göre sıralandı.',oner:s.map(function(x){return {id:x.p.id,neden:x.p.ben}})}}
+function adRun(){
+ var a=st.ad;a.loading=1;a.res=null;render();
+ var kat=P.map(function(p){var v=vakaOf(p);return {id:p.id,ad:p.t,satici:p.s,kategori:p.c,konu:p.p.join(', '),fiyat:p.rfq?'teklifle':p.pr,aciklama:p.ben,vaka:v?{fabrika:v.cust,sonuc:v.m.map(function(x){return x[0]+': '+x[1]}).join('; ')}:null}});
+ var pr=['Sen Masa Sıfır platformunun çözüm danışmanısın. Yalnızca verilen KATALOG içindeki çözümleri öner; katalogda olmayan ürün, fiyat veya sonuç uydurma.','Fabrikanın sorununa, sektörüne ve bütçesine en uygun en fazla 3 çözümü seç, en uygun olan başta olsun.','Sadece şu JSON biçiminde yanıt ver, başka metin yazma: {"ozet":"1-2 cümle genel değerlendirme","oner":[{"id":katalogdaki id sayısı,"neden":"soruna bağlı 1-2 cümle gerekçe"}]}','Türkçe yaz.','SORUN: '+a.prob,'SEKTÖR: '+a.sek,'BÜTÇE (KDV hariç, üst sınır): '+tl(+a.but),'KATALOG: '+JSON.stringify(kat)].join('\n');
+ var done=function(r){a.res=r;a.loading=0;render()};
+ var fb=function(){done(yerel(a))};
+ try{window.claude.use('sample').then(function(s){if(!s)return fb();return s.json(pr,{modelTier:'default',cache:false}).then(function(v){var o=(v&&v.oner||[]).filter(function(x){return byId(x.id)}).slice(0,3);o.length?done({ozet:String(v.ozet||''),oner:o}):fb()})}).catch(fb)}catch(e){fb()}
+}
+function viewDanisman(){
+ var a=st.ad,b=+a.but;
+ var h='<div class="row" style="margin-bottom:20px"><h1 style="margin:0">Çözüm danışmanı</h1><span class="tag" style="background:#fdeccb;color:#8a5a00">Premium</span></div>';
+ h+='<div class="card"><div class="form"><div class="w"><label for="ad1">Sorununuz</label><textarea id="ad1" rows="4" placeholder="Örn. Fırın doğalgaz tüketimimiz yüksek, basınçlı hava hattında kaçaklar var.">'+esc(a.prob)+'</textarea></div><div><label for="ad2">Sektör</label><select id="ad2">'+['Seramik','Cam','Porselen','Tekstil','Gıda','Diğer'].map(function(s){return '<option'+(a.sek===s?' selected':'')+'>'+s+'</option>'}).join('')+'</select></div><div><label for="ad3">Bütçe (KDV hariç)</label><select id="ad3">'+BUT.map(function(x){return '<option value="'+x[0]+'"'+(a.but===x[0]?' selected':'')+'>'+x[1]+'</option>'}).join('')+'</select></div></div><div class="row" style="margin-top:16px"><button class="btn a" id="adgo"'+(a.loading?' disabled':'')+'>'+(a.loading?'Analiz ediliyor…':'Öneri al')+'</button></div></div>';
+ if(a.res){h+=(a.res.ozet?'<p class="body" style="margin:0 0 16px;font-weight:500">'+esc(a.res.ozet)+'</p>':'')+a.res.oner.map(function(o,i){var p=byId(o.id),u=uyum(p,b),v=vakaOf(p),T={uygun:['Bütçenize uygun','background:var(--okt);color:var(--ok)'],belirsiz:['Teklifle netleşir','background:var(--acct);color:var(--acc)'],asiyor:['Bütçeyi aşabilir','background:var(--wnt);color:var(--wn)']}[u.k];
+  return '<article class="card"><div class="row" style="align-items:flex-start;flex-wrap:nowrap"><div class="tile" style="width:120px;height:90px;border-radius:12px;flex:none">'+art(p)+'</div><div class="sp"><div class="row"><span class="tag" style="background:var(--ink);color:var(--paper)">'+(i+1)+'. öneri</span><span class="tag" style="'+T[1]+'">'+T[0]+'</span></div><h2 style="font-size:19px;margin:8px 0 2px">'+esc(p.t)+'</h2><div class="mut">'+esc(p.s)+' · '+esc(u.t)+'</div></div></div><div class="body" style="margin-top:12px">'+esc(o.neden||p.ben)+'</div>'
+  +(v?'<div class="vf" style="margin-top:12px"><b>Kaynak vaka:</b> '+esc(v.cust)+' · '+v.m.slice(0,3).map(function(x){return esc(x[0])+' '+esc(x[1])}).join(' · ')+'</div>':'')
+  +'<div class="row" style="margin-top:14px"><a class="btn o sm" href="#urun-'+p.id+'" style="text-decoration:none;display:inline-flex;align-items:center">Ürünü incele</a><button class="btn sm" data-sat="'+SL.indexOf(p.s)+'">Satıcı sayfasına git</button></div></article>'}).join('')}
+ return h}
+function viewSepet(){var ids=Object.keys(st.cart);
+ if(!ids.length)return '<h1>Sepet</h1><div class="empty">Sepetiniz boş. <a href="#pazar" style="color:var(--acc)">Çözüm pazarına göz atın</a>.</div>';
+ var tot=0;return '<h1>Sepet</h1><div class="card">'+ids.map(function(i){var p=byId(i),q=st.cart[i];tot+=p.pr*q;return '<div class="ci">'+tile(p,'sm-t')+'<div class="sp"><b>'+esc(p.t)+'</b><div class="mut">'+esc(p.s)+'</div></div><div class="qty"><button data-q="'+i+'" data-d="-1" aria-label="Azalt">−</button>'+q+'<button data-q="'+i+'" data-d="1" aria-label="Artır">+</button></div><b style="min-width:110px;text-align:right">'+tl(p.pr*q)+'</b></div>'}).join('')+'<div class="row" style="justify-content:flex-end;margin-top:18px"><span class="mut">Toplam (+ KDV)</span><span class="price" style="font-size:24px">'+tl(tot)+'</span><button class="pbtn f" id="pay" style="width:auto;padding:0 24px;margin:0">Siparişi tamamla</button></div></div>'}
+
+function viewHakkinda(){
+ var s=function(t,b){return '<div class="card"><h2>'+t+'</h2>'+b+'</div>'};
+ return '<div class="hero one"><div class="eyebrow">Hakkında</div><h1>Sürdürülebilirliği açık kaynak yapmak</h1><p>Fabrikalar enerji, atık ve karbon konusunda çoğu zaman aynı sorunları ayrı ayrı çözüyor. Masa Sıfır, çalışan çözümleri ölçülmüş sonuçlarıyla herkesin görebileceği hale getirir.</p></div><div class="hk">'
+ +s('Dört ilke','<ol><li><b>Açık bilgi.</b> Onaylı vakalar, ölçüm yöntemi ve sonuçlarıyla herkese açık.</li><li><b>Onaylı veri.</b> Çözüm sağlayıcı paylaşır, müşteri fabrikanın sürdürülebilirlik uzmanı doğrular.</li><li><b>Katmanlı gizlilik.</b> Atık ve girdi ilanlarında kimlik, iki taraf kabul edene kadar gizli kalır.</li><li><b>Tarafsız pazar.</b> Çözümler fabrikanın önceliklerine göre sıralanır.</li></ol>')
+ +s('Çözüm sağlayıcılar ve ortaklar için','<ul><li>Ürün bilgisi ve fiyat, üreticinin ya da yetkili çözüm ortağının kendisinden gelir.</li><li>Teklif talepleri ilgili satıcıya ya da yetkili ortağa yönlenir.</li><li>Vaka paylaşımı müşteri onayı olmadan yayınlanmaz; bağımsız doğrulama için ayrı bir seviye planlanır.</li></ul>')
+ 
+ +'</div>'}
+var KEY='od-demo-v3';
+function save(){try{localStorage.setItem(KEY,JSON.stringify({F:F,cart:st.cart,Q:Q,PR:PR}))}catch(e){}}
+function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'null');if(d&&d.F&&d.F.length>=F.length){F=d.F;st.cart=d.cart||{};if(d.Q)Q=d.Q;if(d.PR)PR=d.PR}}catch(e){}}
+function resetDemo(){try{localStorage.removeItem(KEY)}catch(e){}location.reload()}
+function render(){
+ var h=location.hash.replace('#','')||'akis',v=h.indexOf('urun-')===0?'urun':h.indexOf('satici-')===0?'satici':h;
+ $('#nav').innerHTML=[['akis','Vakalar'],['teklifler','Gelen teklifler'+(newQ()?' ('+newQ()+')':'')],['profil','Firma profili'],['pazar','Çözüm pazarı'],['danisman','Çözüm danışmanı <span class="tag" style="background:#fdeccb;color:#8a5a00">Premium</span>'],['hakkinda','Hakkında'],['onay','Onay'+(st.role==='uz'&&pend().length?' ('+pend().length+')':'')]].filter(function(x){return st.role==='sag'?(x[0]!=='pazar'&&x[0]!=='onay'&&x[0]!=='danisman'):(x[0]!=='teklifler'&&x[0]!=='profil')}).map(function(x){return '<a href="#'+x[0]+'" class="'+(x[0]===v||(x[0]==='pazar'&&(v==='urun'||v==='satici'))?'on':'')+'">'+x[1]+'</a>'}).join('');
+ document.querySelectorAll('.role button').forEach(function(b){b.classList.toggle('on',b.dataset.role===st.role)});
+ $('#app').innerHTML=v==='pazar'?viewPazar():v==='urun'?viewUrun(h.slice(5)):v==='danisman'?viewDanisman():v==='profil'?viewProfil():v==='teklifler'?viewTeklifler():v==='satici'?viewSatici(h.slice(7)):v==='onay'?viewOnay():v==='hakkinda'?viewHakkinda():viewAkis();
+ if(v==='pazar'){$('#so').value=st.sort;if(st.fq){var q=$('#q');q.focus();q.setSelectionRange(q.value.length,q.value.length);st.fq=0}}
+ if(st.ff){var fq=$('#fq');if(fq){fq.focus();fq.setSelectionRange(fq.value.length,fq.value.length)}st.ff=0}if(v!==st.lv)window.scrollTo(0,0);st.lv=v;save()}
+
+document.addEventListener('click',function(e){var b=e.target.closest('button'),d=b?b.dataset:{};
+ if(!b){var c=e.target.closest('[data-go]');if(c)location.hash='urun-'+c.dataset.go;return}
+ if(d.role){st.role=d.role;st.form=0;var nh=d.role==='sag'?'teklifler':'akis';if(location.hash.replace('#','')!==nh){location.hash=nh}else render()}
+ else if(d.form!==undefined){st.form=+d.form;render()}
+ else if(d.add){st.cart[d.add]=(st.cart[d.add]||0)+1;toast('Sepete eklendi.');if(d.now)location.hash='sepet';else render()}
+ else if(b.id==='adgo'){var ad=st.ad;ad.prob=$('#ad1').value.trim();ad.sek=$('#ad2').value;ad.but=$('#ad3').value;if(!ad.prob){toast('Önce sorununuzu yazın.');return}adRun()}
+ else if(d.pe){st.pe=1;render()}
+ else if(b.id==='psv'){PR.slogan=$('#pe1').value.trim()||PR.slogan;PR.hak=$('#pe2').value.trim()||PR.hak;st.pe=0;toast('Profil kaydedildi.');render()}
+ else if(d.qopen){st.qopen=st.qopen||{};st.qopen[d.qopen]=!st.qopen[d.qopen];render()}
+ else if(d.qsend){var qq=Q.filter(function(x){return x.id==d.qsend})[0],ta=$('#qa'+d.qsend).value.trim();if(!ta){toast('Teklif tutarını yazın.');return}qq.st='gonderildi';qq.tut=ta+' + KDV';qq.sure=$('#qb'+d.qsend).value.trim()||'—';toast('Teklif gönderildi.');render()}
+ else if(d.qno){Q.filter(function(x){return x.id==d.qno})[0].st='red';render()}
+ else if(d.sat){location.hash='satici-'+d.sat}
+ else if(b.id==='req'){var si=+location.hash.replace('#satici-','');if(SL[si]===SELF){Q.unshift({id:Date.now(),fab:MYF,who:EXP.n+' · '+EXP.r,prod:P.filter(function(p){return p.s===SELF})[0].id,msg:$('#rm').value.trim()||'Teklif talebi.',det:[['Lokasyon','Kütahya OSB']],ago:'şimdi',st:'yeni'})}toast('Talebiniz satıcıya iletildi.')}
+ else if(d.rfq){toast('Teklif talebiniz satıcıya iletildi.')}
+ else if(d.ask){toast('İstek gönderildi. Karşı taraf da kabul ederse kimlik bilgileri açılır.')}
+ else if(d.like){st.liked[d.like]=!st.liked[d.like];render()}
+ else if(d.cm){st.open[d.cm]=!st.open[d.cm];render()}
+ else if(d.send){var i=$('#ci'+d.send),t=i.value.trim();if(!t)return;fById(d.send).cm.push([st.role==='uz'?EXP.n:SELF,t]);render()}
+ else if(d.ok){if(!$('#chk'+d.ok).checked){toast('Önce veri doğrulama kutusunu işaretleyin.');return}var f=fById(d.ok);f.st='ok';f.ap=EXP.n+', '+EXP.r+' · '+MYF;toast('Onaylandı ve yayınlandı.');render()}
+ else if(d.no){fById(d.no).st='red';toast('Paylaşım reddedildi, sağlayıcıya bildirildi.');render()}
+ else if(d.scope){st.scope=d.scope;render()}
+ else if(d.type){st.type=d.type;render()}
+ else if(d.pr){var k=st.pr.indexOf(d.pr);k>-1?st.pr.splice(k,1):st.pr.push(d.pr);render()}
+ else if(d.cat){st.cat=d.cat;render()}
+ else if(d.q){var n=(st.cart[d.q]||0)+(+d.d);if(n<1)delete st.cart[d.q];else st.cart[d.q]=n;render()}
+ else if(b.id==='rst'){resetDemo()}
+ else if(b.id==='pay'){st.cart={};toast('Siparişiniz alındı.');render()}
+ else if(b.id==='subm'){var tx=$('#ft').value.trim(),mv=$('#fm').value.trim();if(!tx||!mv){toast('Açıklama ve ölçüm yöntemi zorunlu.');return}
+  var m=[];[1,2].forEach(function(n){var a=$('#fl'+n).value.trim(),v=$('#fv'+n).value.trim();if(a&&v)m.push([a,v])});var cu=$('#fc').value;
+  F.unshift({id:Date.now(),type:'cozum',by:SELF,cust:cu,st:'bekliyor',scope:'osb',ago:'şimdi',text:tx,m:m,ver:mv,prod:$('#fp').value?+$('#fp').value:0,likes:0,cm:[]});st.form=0;toast('Onaya gönderildi: '+cu+' sürdürülebilirlik uzmanı doğrulayınca yayınlanır.');render()}
+ else if(b.id==='subl'){var x=$('#fx').value.trim();if(!x){toast('Malzeme bilgilerini yazın.');return}var ty=$('#fk').value;
+  F.unshift({id:Date.now(),type:ty,by:'Siz (kimlik gizli)',st:'ok',scope:$('#fs').value,ago:'şimdi',text:(ty==='atik'?'Atık ilanı: ':'Girdi talebi: ')+x,m:[],likes:0,cm:[]});st.form=0;toast('İlanınız yayınlandı.');render()}});
+document.addEventListener('input',function(e){if(e.target.id==='fq'){st.fsq=e.target.value;st.ff=1;render()}if(e.target.id==='q'){st.q=e.target.value;st.fq=1;render()}});
+document.addEventListener('change',function(e){if(e.target.id==='so'){st.sort=e.target.value;render()}});
+load();window.addEventListener('hashchange',render);render();
+</script>
+</body>
+</html>
